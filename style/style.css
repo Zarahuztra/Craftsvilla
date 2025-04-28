@@ -1,0 +1,437 @@
+/* --- ALL CSS ER NØYAKTIG SOM FØR --- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #a4795b;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.gallery-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.fixed-top-images,
+.fixed-bottom-images {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+  z-index: 1;
+}
+.fixed-top-images {
+  top: -325px;
+}
+.fixed-bottom-images {
+  bottom: -400px;
+}
+.fixed-top-images img,
+.fixed-bottom-images img {
+  width: 640px;
+  height: 440px;
+  object-fit: cover;
+  filter: drop-shadow(-10px 12px 20px rgba(0, 0, 0, 0.5));
+}
+.fixed-top-images img {
+  object-position: bottom;
+}
+.fixed-bottom-images img {
+  object-position: top;
+}
+.frame-row {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+.frame-container {
+  flex: 0 0 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+.frame-wrapper-inner {
+  position: relative;
+  width: 1125px;
+  height: 750px;
+  z-index: 2;
+  top: 40px;
+}
+.clip-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 125px;
+  width: 875px;
+  height: 550px;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #eee;
+}
+.clip-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.clip-wrapper iframe {
+  border: none;
+}
+.frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(-8px 10px 15px rgba(0, 0, 0, 0.5));
+}
+.scene-text-container {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  max-width: 80%;
+  z-index: 3;
+  color: #333;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.scene-text-container h3 {
+  font-family: "Metamorphous", sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+.scene-text-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.scene-text-container p:last-child {
+  margin-bottom: 0;
+}
+.map-title-container {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+.map-title-container h3 {
+  font-family: "Metamorphous", sans-serif;
+  font-size: 2.2rem;
+  margin: 0;
+}
+.frame-button {
+  position: absolute;
+  z-index: 3;
+  top: 33%;
+  left: 50%;
+  transform: translate(-80%, -50%);
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #77a255;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+}
+.frame-button:hover {
+  background-color: #5f8e4a;
+}
+.scene2-button-container {
+  position: absolute;
+  bottom: 196px;
+  left: 69.5%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+.scene2-button-container .frame-button {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+.nav-btn {
+  position: absolute;
+  top: 28%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10;
+  border-radius: 50%;
+  line-height: 1;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-left {
+  left: 160px;
+}
+.nav-right {
+  right: 160px;
+}
+.nav-btn:hover:not(:disabled) {
+  background: rgba(179, 179, 179, 0);
+  color: white;
+}
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* --- BARNEKORT --- */
+.card-row {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+}
+.card {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: -6px 8px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* MODAL BACKDROP (Uendret) */
+.modal-backdrop {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ——————————————————— */
+/* MODAL CONTENT (Containeren) */
+.modal-content {
+  display: inline-block; /* wrap rundt innholdet */
+  width: auto; /* la bildet styre bredden */
+  height: auto; /* la bildet styre høyden */
+  max-width: 80vw; /* behold dine begrensninger */
+  max-height: 80vh;
+  padding: 5px;
+  box-sizing: border-box;
+  /* resten av stilen… */
+}
+
+.modal-content img {
+  display: block;
+  margin: 0 auto; /* <-- sentrerer bildet */
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+/* STENGEBUTTONG (✕) (Uendret) */
+.modal-close {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  line-height: 1;
+}
+
+/* Felles stil for begge piler */
+.modal-arrow {
+  position: absolute; /* Gjør absolutt plassering mulig */
+  top: 50%; /* Plasserer vertikalt midt i .modal-content */
+  transform: translateY(-50%); /* Justerer for top:50% */
+  width: 40px; /* Bredde på knappen */
+  height: 40px; /* Høyde på knappen */
+  border-radius: 50%; /* Runde kanter */
+  background: rgba(255, 255, 255, 0.8); /* Halvgjennomsiktig hvit bakgrunn */
+  border: none; /* Fjern standard ramme */
+  font-size: 1.5rem; /* Størrelse på pil-tegnet */
+  color: #333; /* Pil-farge */
+  cursor: pointer;
+  display: flex; /* Senterer pil-tegnet */
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 10002; /* Ligger over bildet */
+}
+
+/* Venstre-pil */
+.modal-arrow.prev {
+  left: 10px; /* 10px fra venstre kant av modal-content */
+}
+
+/* Høyre-pil */
+.modal-arrow.next {
+  right: 10px; /* 10px fra høyre kant av modal-content */
+}
+
+/* Hover‑effekt */
+.modal-arrow:hover {
+  background: rgba(255, 255, 255, 1); /* Hvitere når mus over */
+  transform: translateY(-50%) scale(1.1); /* Litt større ved hover */
+}
+
+/* Hvis du vil ha piler uten bakgrunn, kun farget tekst */
+.modal-arrow.no-bg {
+  background: transparent;
+  color: #fff;
+}
+
+/* Eksempel: større knapper og litt mer til venstre/høyre */
+.modal-arrow.large {
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+}
+
+.modal-arrow.large.prev {
+  left: 20px;
+}
+
+.modal-arrow.large.next {
+  right: 20px;
+}
+
+/* Plasserer barna i et 3x3‑rutenett */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 240px);
+  gap: 10px;
+  position: absolute;
+  top: 120px; /* Juster om du vil flytte rutenettet opp eller ned */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* ── SCENE “VELGDATO” (seks kort) ── */
+.velgdato-row {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+.frame-wrapper-inner > .velgdato-row:nth-child(3) {
+  top: 240px;
+}
+.frame-wrapper-inner > .velgdato-row:nth-child(4) {
+  top: 380px;
+}
+
+.velgdato-card {
+  flex: 1;
+  padding: 20px;
+  background-image: url("../images/calbg2.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+.velgdato-card:hover {
+  opacity: 0.9;
+}
+.velgdato-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+.velgdato-card p {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+.velgdato-select-text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}

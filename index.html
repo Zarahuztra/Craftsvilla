@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craftsvilla</title>
+    <!-- preload the font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!-- ── GALLERY / FRAMES ─────────────────────────── -->
+    <div class="gallery-wrapper">
+      <div class="fixed-top-images">
+        <img src="images/img1.jpg" alt="Topp venstre" />
+        <img src="images/img2.jpg" alt="Topp høyre" />
+      </div>
+      <div class="fixed-bottom-images">
+        <img src="images/img3.jpg" alt="Bunn venstre" />
+        <img src="images/img6.jpg" alt="Bunn høyre" />
+      </div>
+      <button class="nav-btn nav-left">❮</button>
+      <div class="frame-row" id="frameRow"></div>
+      <button class="nav-btn nav-right">❯</button>
+    </div>
+
+    <!-- ── MODAL BACKDROP ────────────────────────────── -->
+    <div class="modal-backdrop">
+      <div class="modal-content">
+        <button class="modal-arrow prev" aria-label="Forrige bilde">‹</button>
+        <img src="" alt="Modalt bilde" />
+        <button class="modal-arrow next" aria-label="Neste bilde">›</button>
+        <button class="modal-close" aria-label="Lukk modal">✕</button>
+      </div>
+    </div>
+
+    <!-- ── SINGLE ENTRY MODULE ───────────────────────── -->
+    <script type="module" src="./script/main.js"></script>
+  </body>
+</html>
